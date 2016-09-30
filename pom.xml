@@ -1,0 +1,178 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.irf.it.rmg</groupId>
+  <artifactId>teikoku</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <name>teikoku Grid Scheduling Framework</name>
+  <description>Teikoku Grid Scheduling Framework (tGSF). tGSF scheduling model is:
+
+Machine model,
+- Q, compromise by one or more identical machines. Therefore we say the machine model is heterogeneous.
+
+Task properties:
+- Rj, task release times 
+- Pj, task processing time
+- P'j, task runtime estimates
+- nj, number of requested resources
+
+Optimization function:
+- c_max
+- rho, approximation factor
+- etc.
+
+The tGSF proyect started at ITMC at U. Dortmund Germany. We have extended its functionality at CICESE Research Center.
+No communications cost are considered. </description>
+  <organization>
+  	<name>CICESE Research Center &amp; TU Dortmund University</name>
+  	<url>http://www.cicese.edu.mx</url>
+  </organization>
+  <developers>
+		<developer>
+			<id>grimme</id>
+			<name>Christian Grimme</name>
+			<email>christian.grimme@udo.edu</email>
+			<organization>TU Dortmund University</organization>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>-6</timezone>
+		</developer>
+		<developer>
+			<id>lepping</id>
+			<name>Joachim Lepping</name>
+			<email>joachim.lepping@udo.edu</email>
+			<organization>TU Dortmund University</organization>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>-6</timezone>
+		</developer>
+		<developer>
+			<id>alexp</id>
+			<name>Alexander Papaspyrou</name>
+			<email>alexander.papaspyrou@udo.edu</email>
+			<organization>TU Dortmund University</organization>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>-6</timezone>
+		</developer>
+		<developer>
+			<id>foelling</id>
+			<name>Alexander Fölling</name>
+			<email>alexander.foelling@tu-dortmund.de</email>
+			<organization>TU Dortmund University</organization>
+			<timezone>-6</timezone>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>ahirales</id>
+			<name>Adan Hirales Carbajal</name>
+			<email>ahirales@uabc.mx</email>
+			<organization>CICESE Research Center</organization>
+			<timezone>GMT -8</timezone>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>  
+	<licenses>
+		<license>
+			<name>GPL 3</name>
+			<url>http://www.gnu.org/licenses/gpl.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+  <dependencies>
+  	<dependency>
+  		<groupId>commons-cli</groupId>
+  		<artifactId>commons-cli</artifactId>
+  		<version>1.0</version>
+  	</dependency>
+  	<dependency>
+			<groupId>commons-daemon</groupId>
+			<artifactId>commons-daemon</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>colt</groupId>
+			<artifactId>colt</artifactId>
+			<version>1.2.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xerces</artifactId>
+			<version>2.4.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.9.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jung</groupId>
+			<artifactId>jung-api</artifactId>
+			<version>2.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jung</groupId>
+			<artifactId>jung-algorithms</artifactId>
+			<version>2.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jung</groupId>
+			<artifactId>jung-graph-impl</artifactId>
+			<version>2.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+  </dependencies>
+  <properties>
+  	<sourceLevel>1.6</sourceLevel>
+  </properties>
+  <inceptionYear>2006</inceptionYear>
+</project>
