@@ -24,7 +24,7 @@ public class DVFS {
 	
 	HashMap<Resource, CoreControlInformation> coreControlInformation;
 	
-	HashMap<Number, ProcessorControlInformation> processorControlInformation;	
+	HashMap<Component, ProcessorControlInformation> processorControlInformation;	
 	
 	HashSet<Component> dirtyProcessors;
 	
@@ -62,7 +62,7 @@ public class DVFS {
 	
 	public DVFS(ResourceBundle coreSet, Vector<Component> processors, Site site, long windowSize){
 		coreControlInformation = new HashMap<Resource,CoreControlInformation>();
-		processorControlInformation = new HashMap<Number, ProcessorControlInformation>();
+		processorControlInformation = new HashMap<Component, ProcessorControlInformation>();
 		dirtyProcessors = new HashSet<Component>();
 		
 		this.site = site;
@@ -80,7 +80,7 @@ public class DVFS {
 			ProcessorControlInformation pStatus = new ProcessorControlInformation();
 			pStatus.excess = 0;
 			pStatus.frequency = 1;
-			processorControlInformation.put(processor.getLabel(), pStatus);
+			processorControlInformation.put(processor, pStatus);
 		}
 
 		// Loads DVFS window size data
@@ -160,21 +160,27 @@ public class DVFS {
 		for(Component processor : processors) {
 			boolean frequencyChange = false;
 			double newFrequency = 0;
-			double processingTime = getMeanProcTime(processor);
 			double excess = processorControlInformation.get(processor).excess;
+			double processingTime = getMeanProcTime(processor); // + excess
 			double idle = windowSize - processingTime;
 			double frequency = processorControlInformation.get(processor).frequency;
 			
 			// Va a varial?
-			double nextExcess = processingTime  - (frequency * windowSize);
 			double utilization = processingTime / windowSize;
+			double nextExcess = processingTime  - (frequency * windowSize);
 			
-			if( excess > idle)
+			
+			if(excess < 0)
+				excess = 0;
+				
+			if( excess > idle )
 				newFrequency = 1.0;
 			else if( utilization > 0.7 ) {
 				newFrequency = frequency + 0.2;
 			} else if( utilization < 0.5) {
 				newFrequency = frequency - (0.6 - utilization);
+			}else {
+				newFrequency = frequency;
 			}
 			
 			if( newFrequency > 1.0) {

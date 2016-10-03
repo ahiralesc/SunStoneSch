@@ -1,27 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.irf.it.rmg</groupId>
-  <artifactId>teikoku</artifactId>
+  <artifactId>StoneSch</artifactId>
   <version>0.1-SNAPSHOT</version>
-  <name>teikoku Grid Scheduling Framework</name>
-  <description>Teikoku Grid Scheduling Framework (tGSF). tGSF scheduling model is:
+  <name>Sun Stone Scheduling Framework</name>
+  <description>The Sun Stone Scheduling Framework (StoneSch) has been used to address deterministic, online, and non-clairvoyant problems. It also has load balancing capabilities. It has been used to study Grid and data center scheduling problems. 
 
-Machine model,
-- Q, compromise by one or more identical machines. Therefore we say the machine model is heterogeneous.
-
-Task properties:
-- Rj, task release times 
-- Pj, task processing time
-- P'j, task runtime estimates
-- nj, number of requested resources
-
-Optimization function:
-- c_max
-- rho, approximation factor
-- etc.
-
-The tGSF proyect started at ITMC at U. Dortmund Germany. We have extended its functionality at CICESE Research Center.
-No communications cost are considered. </description>
+The StoneSch branched from the Teikoku Scheduling Framework, project stated in ITMC U. Dormund, Germany and was extended in CICESE, México.</description>
   <organization>
   	<name>CICESE Research Center &amp; TU Dortmund University</name>
   	<url>http://www.cicese.edu.mx</url>
