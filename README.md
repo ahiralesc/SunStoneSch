@@ -1,4 +1,4 @@
-# Sun Stone Scheduling Framework (STone Sch)
+# Workflow shceduling framework
 
 The Sun Stone is scheduling framework that started as a tool for simulating load balancing and scheduling problems. The project started at the University of Dortmund Germany, our branch has continously added new functionality, such as: distributed information system, workflow scheduling sypport, and energy conservation.  
 
